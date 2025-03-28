@@ -3,100 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>游戏设计师的个人空间</title>
+    <title>远在咫尺的个人空间</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1>游戏设计师的探索之旅</h1>
-            <p class="subtitle">10年行业经验 · 独立游戏开发者</p>
-        </div>
-    </header>
-
-    <nav class="navbar">
-        <div class="container">
-            <ul>
-                <li><a href="#home">首页</a></li>
-                <li><a href="#about">关于我</a></li>
-                <li><a href="#portfolio">作品集</a></li>
-                <li><a href="#blog">博客</a></li>
+    <!-- 导航栏 -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span>GameDesign</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">首页</a></li>
+                <li><a href="#projects">项目</a></li>
+                <li><a href="#about">关于</a></li>
                 <li><a href="#contact">联系</a></li>
             </ul>
+            <div class="nav-social">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
     </nav>
 
-    <main class="container">
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h2>创造有意义的游戏体验</h2>
-                <p>从发行运营到独立开发，探索游戏设计的无限可能</p>
-                <a href="#portfolio" class="btn">查看我的作品</a>
+    <!-- 动态背景元素 -->
+    <div class="bg-elements">
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+        <div class="bg-circle circle-3"></div>
+        <div class="bg-square square-1"></div>
+        <div class="bg-square square-2"></div>
+        <div class="bg-triangle triangle-1"></div>
+    </div>
+
+    <!-- 主内容区 -->
+    <main class="content-wrapper">
+        <!-- 首页 -->
+        <section id="home" class="page-section active">
+            <div class="hero-grid">
+                <!-- 主标题卡片 -->
+                <div class="hero-card main-title">
+                    <h1>远在咫尺的创作空间</h1>
+                    <p class="subtitle">8年游戏行业经验 | 独立游戏开发者</p>
+                </div>
+
+                <!-- 关于卡片 -->
+                <div class="hero-card about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>关于我</h3>
+                    <p>15年+主机游戏、竞技游戏经验，资深游戏玩家。</p>
+                </div>
+
+                <!-- 项目卡片 -->
+                <div class="hero-card projects-card">
+                    <div class="card-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>我的项目</h3>
+                    <p>正在开发一款独立网页游戏</p>
+                </div>
+
+                <!-- 技能卡片 -->
+                <div class="hero-card skills-card">
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>技能</h3>
+                    <p>数据分析，产品运营，Unity, Python, 游戏设计, 关卡/玩法设计</p>
+                </div>
+
+                <!-- 大图卡片 -->
+                <div class="hero-card image-card">
+                    <img src="assets/placeholder-hero.png" alt="游戏设计作品">
+                </div>
             </div>
         </section>
 
-        <section id="about" class="section">
-            <h2>关于我</h2>
-            <div class="about-grid">
-                <div class="about-card">
-                    <h3>行业经验</h3>
-                    <p>10年游戏行业从业经验，熟悉游戏发行、运营全流程</p>
+        <!-- 项目部分 -->
+        <section id="projects" class="page-section">
+            <div class="section-header">
+                <h2>游戏项目</h2>
+                <p>探索我的游戏设计作品</p>
+            </div>
+            <div class="project-grid">
+                <!-- 项目卡片1 -->
+                <div class="project-card" data-project="project1">
+                    <div class="project-image">
+                        <img src="assets/placeholder-project1.png" alt="项目1">
+                    </div>
+                    <div class="project-info">
+                        <h3>三国肉鸽对战游戏</h3>
+                        <p>一款PVE的2D类宝可梦对战游戏</p>
+                    </div>
                 </div>
-                <div class="about-card">
-                    <h3>设计理念</h3>
-                    <p>注重游戏机制与叙事的完美结合，创造沉浸式体验</p>
-                </div>
-                <div class="about-card">
-                    <h3>当前项目</h3>
-                    <p>正在开发一款叙事驱动的单机冒险游戏</p>
+                
+                <!-- 项目卡片2 -->
+                <div class="project-card" data-project="project2">
+                    <div class="project-image">
+                        <img src="assets/placeholder-project2.png" alt="项目2">
+                    </div>
+                    <div class="project-info">
+                        <h3>网页文字小游戏</h3>
+                        <p>轻松有趣的休闲益智游戏</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="portfolio" class="section">
-            <h2>作品集</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="placeholder">项目1预览图</div>
-                    <h3>游戏概念设计</h3>
-                </div>
-                <div class="portfolio-item">
-                    <div class="placeholder">项目2预览图</div>
-                    <h3>关卡原型</h3>
-                </div>
-                <div class="portfolio-item">
-                    <div class="placeholder">项目3预览图</div>
-                    <h3>UI设计</h3>
+        <!-- 项目详情层 -->
+        <div class="project-detail-layer">
+            <!-- 项目1详情 -->
+            <div class="project-detail" data-project-detail="project1">
+                <button class="close-detail"><i class="fas fa-times"></i></button>
+                <div class="detail-content">
+                    <div class="detail-images">
+                        <img src="assets/placeholder-detail1-1.png" alt="项目1截图1">
+                        <img src="assets/placeholder-detail1-2.png" alt="项目1截图2">
+                    </div>
+                    <div class="detail-text">
+                        <h3>冒险解谜游戏</h3>
+                        <div class="detail-meta">
+                            <span><i class="far fa-calendar-alt"></i> 2023年发布</span>
+                            <span><i class="fas fa-tags"></i> Unity, C#, 2D</span>
+                        </div>
+                        <p>这是一款充满谜题和探索元素的2D冒险游戏，玩家需要解开各种环境谜题来推进故事。</p>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <section id="blog" class="section">
-            <h2>行业见解</h2>
-            <article class="blog-post">
-                <h3>游戏发行市场的现状与思考</h3>
-                <p>从一线发行角度分析当前市场趋势...</p>
-                <a href="#" class="read-more">阅读更多</a>
-            </article>
-        </section>
+            <!-- 项目2详情 -->
+            <div class="project-detail" data-project-detail="project2">
+                <button class="close-detail"><i class="fas fa-times"></i></button>
+                <div class="detail-content">
+                    <div class="detail-images">
+                        <img src="assets/placeholder-detail2-1.png" alt="项目2截图1">
+                        <img src="assets/placeholder-detail2-2.png" alt="项目2截图2">
+                    </div>
+                    <div class="detail-text">
+                        <h3>休闲手游</h3>
+                        <div class="detail-meta">
+                            <span><i class="far fa-calendar-alt"></i> 2024年发布</span>
+                            <span><i class="fas fa-tags"></i> Unreal, Blueprint, Mobile</span>
+                        </div>
+                        <p>一款轻松有趣的休闲益智游戏，专为移动设备设计，包含多种游戏模式和关卡。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <section id="contact" class="section">
-            <h2>联系我</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="您的姓名">
-                <input type="email" placeholder="电子邮箱">
-                <textarea placeholder="留言内容"></textarea>
-                <button type="submit" class="btn">发送消息</button>
-            </form>
-        </section>
+        <!-- 其他部分... -->
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>© 2025 游戏设计师的个人空间</p>
-        </div>
-    </footer>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
