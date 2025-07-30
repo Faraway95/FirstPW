@@ -1,0 +1,85 @@
+/* 导航按钮和滚动行为样式 */
+
+/* 导航按钮样式 */
+.nav-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-weight: 500;
+}
+
+.nav-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    border-radius: var(--border-radius);
+}
+
+.nav-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:hover::before {
+    transform: scale(1);
+}
+
+.nav-button.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    transform: scaleX(1);
+}
+
+/* 导航栏滚动行为 */
+header {
+    transition: transform 0.4s ease, background-color 0.3s ease;
+}
+
+.header-hidden {
+    transform: translateY(-100%);
+}
+
+/* 滚动时导航栏背景加深 */
+header.scrolled {
+    background-color: rgba(30, 58, 138, 0.95);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 移动端导航按钮样式 */
+@media screen and (max-width: 768px) {
+    nav .nav-button {
+        display: block;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        text-align: center;
+        border-radius: var(--border-radius);
+    }
+    
+    nav .nav-button:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    nav .nav-button.active {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+}

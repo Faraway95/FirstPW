@@ -1,0 +1,172 @@
+/* 背景动画和形状样式 */
+
+/* 粒子容器 */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* 粒子基本样式 */
+.particle {
+    position: absolute;
+    z-index: 1;
+    animation: float linear infinite;
+    filter: blur(3px);
+}
+
+/* 粒子形状 */
+.particle-circle {
+    border-radius: 50%;
+}
+
+.particle-square {
+    border-radius: 5px;
+}
+
+.particle-triangle {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.particle-rectangle {
+    border-radius: 5px;
+    height: 50% !important;
+}
+
+.particle-hexagon {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* 动画关键帧 */
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(5%, 10%) rotate(5deg);
+    }
+    50% {
+        transform: translate(-5%, 15%) rotate(-5deg);
+    }
+    75% {
+        transform: translate(-10%, 5%) rotate(-10deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+}
+
+/* 卡片悬停动画增强 */
+.card {
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                box-shadow 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* 卡片内容增强 */
+.card-content {
+    position: relative;
+    z-index: 3;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-content {
+    transform: translateY(-5px);
+}
+
+/* 英雄部分增强 */
+#hero {
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, var(--background-color), transparent);
+    z-index: 2;
+}
+
+/* 按钮悬停效果增强 */
+.btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover::before {
+    left: 0;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .particle {
+        opacity: 0.3 !important;
+    }
+}

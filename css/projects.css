@@ -1,0 +1,805 @@
+/* 项目页面特定样式 - 昆特牌风格 */
+
+/* 项目页面主体样式 */
+.projects-hero {
+    height: 40vh;
+    min-height: 300px;
+    background-image: url('../images/projects-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-text);
+}
+
+.projects-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8), rgba(240, 147, 251, 0.6));
+}
+
+.projects-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.projects-hero h2 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+.projects-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 项目筛选器 */
+.projects-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1.5rem;
+    margin: 0.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+/* 精选项目 */
+.featured-project {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.featured-project h3 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.featured-project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--card-background);
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 8px solid #3b82f6; /* 蓝色边框 */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.featured-project-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.featured-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.featured-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
+    display: flex;
+    align-items: flex-end;
+    padding: var(--spacing-md);
+}
+
+.featured-tag {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+}
+
+.featured-project-content {
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+.featured-project-content h3 {
+    margin-top: 0;
+}
+
+.featured-project-content p {
+    margin-bottom: var(--spacing-md);
+}
+
+.featured-project-meta {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    margin: 0 var(--spacing-sm);
+    color: var(--text-color);
+}
+
+.meta-item i {
+    margin-right: 0.5rem;
+    color: var(--secondary-color);
+}
+
+/* 项目网格 */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.project-card {
+    height: 400px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.project-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--shadow);
+    border: 5px solid #3b82f6; /* 蓝色边框 */
+}
+
+.project-card:hover .project-card-inner {
+    transform: rotateY(180deg);
+}
+
+.project-card-front, .project-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: calc(var(--card-border-radius) - 5px);
+    overflow: hidden;
+}
+
+.project-card-front {
+    background-color: var(--card-background);
+}
+
+.project-card-front img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.project-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-color: var(--card-background);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-card-overlay h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.project-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project-tag {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-card-back {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    transform: rotateY(180deg);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.project-card-back h3 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+    color: var(--light-text);
+}
+
+.project-card-back p {
+    margin-bottom: var(--spacing-md);
+}
+
+.project-card-back .btn {
+    background-color: var(--light-text);
+    color: var(--primary-color);
+}
+
+.project-card-back .btn:hover {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+}
+
+/* 贪吃蛇游戏样式 */
+.snake-game-section {
+    margin: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.snake-game-section h3 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+#snake-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: var(--card-background);
+    border-radius: var(--card-border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow);
+    border: 8px solid #4B0082; /* 昆特牌紫色边框 */
+}
+
+@media (min-width: 768px) {
+    #snake-game-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
+#snake-game-canvas {
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    margin-bottom: var(--spacing-md);
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-md);
+    min-width: 200px;
+}
+
+.score-container {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+}
+
+.controls {
+    display: flex;
+    margin-bottom: var(--spacing-md);
+}
+
+.controls button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.controls button:hover {
+    background-color: var(--primary-color);
+}
+
+.controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.leaderboard-container {
+    width: 100%;
+    margin-top: var(--spacing-md);
+}
+
+.leaderboard-container h4 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+#leaderboard {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+#leaderboard li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#leaderboard li:last-child {
+    border-bottom: none;
+}
+
+#leaderboard .rank {
+    font-weight: bold;
+    color: var(--primary-color);
+    width: 30px;
+}
+
+#leaderboard .name {
+    flex-grow: 1;
+    text-align: left;
+    padding: 0 0.5rem;
+}
+
+#leaderboard .score {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.game-instructions {
+    margin-top: var(--spacing-md);
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-instructions h4 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.game-instructions ul {
+    text-align: left;
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.game-instructions li {
+    margin-bottom: 0.5rem;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .featured-project-container {
+        flex-direction: column;
+    }
+    
+    .featured-project-image {
+        height: 250px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #snake-game-canvas {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* 游戏项目部分样式 */
+.game-projects-section {
+    padding: 4rem 0;
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.game-projects-section h3 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.game-projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card.featured {
+    background: rgba(30, 58, 138, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.project-card.featured:hover {
+    transform: translateY(-8px);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+}
+
+.project-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card.featured:hover .project-img {
+    transform: scale(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.project-tag {
+    background: rgba(59, 130, 246, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.project-content {
+    padding: 2rem;
+}
+
+.project-content h4 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.project-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #60a5fa;
+    font-size: 0.9rem;
+}
+
+.meta-item i {
+    font-size: 0.8rem;
+}
+
+/* 游戏研报部分样式 */
+.game-reports-section {
+    padding: 4rem 0;
+    background: rgba(15, 23, 42, 0.9);
+}
+
+.game-reports-section h3 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.section-description {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.report-card {
+    background: rgba(30, 58, 138, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15);
+}
+
+.report-icon {
+    font-size: 3rem;
+    color: #60a5fa;
+    margin-bottom: 1.5rem;
+}
+
+.report-content h4 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.report-description {
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.report-meta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.report-meta .meta-item {
+    font-size: 0.85rem;
+    color: #60a5fa;
+}
+
+.report-actions {
+    margin-top: 1rem;
+}
+
+.btn.btn-secondary {
+    background: rgba(100, 116, 139, 0.3);
+    color: #94a3b8;
+    border: 1px solid rgba(100, 116, 139, 0.5);
+    cursor: not-allowed;
+}
+
+.btn.btn-secondary:disabled {
+    opacity: 0.6;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .game-projects-section h3,
+    .game-reports-section h3 {
+        font-size: 1.8rem;
+    }
+    
+    .section-description {
+        font-size: 1rem;
+    }
+    
+    .project-content {
+        padding: 1.5rem;
+    }
+    
+    .report-card {
+        padding: 1.5rem;
+    }
+    
+    .reports-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-meta,
+    .report-meta {
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+/* 卡牌游戏预览样式 */
+.card-game-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: linear-gradient(45deg, #0f4c3a, #2d5a47);
+    padding: 30px;
+}
+
+.card-demo {
+    display: flex;
+    gap: -10px;
+    perspective: 1000px;
+}
+
+.demo-card {
+    width: 35px;
+    height: 50px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: cardFloat 3s infinite ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-left: -8px;
+}
+
+.demo-card:nth-child(1) { animation-delay: 0s; }
+.demo-card:nth-child(2) { animation-delay: 0.3s; }
+.demo-card:nth-child(3) { animation-delay: 0.6s; }
+.demo-card:nth-child(4) { animation-delay: 0.9s; }
+
+.demo-card::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 12px;
+    height: 12px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.demo-card.spade::before {
+    content: '♠';
+    color: #000;
+}
+
+.demo-card.heart::before {
+    content: '♥';
+    color: #e74c3c;
+}
+
+.demo-card.club::before {
+    content: '♣';
+    color: #000;
+}
+
+.demo-card.diamond::before {
+    content: '♦';
+    color: #e74c3c;
+}
+
+@keyframes cardFloat {
+    0%, 100% { 
+        transform: translateY(0px) rotateY(0deg); 
+        opacity: 1; 
+    }
+    25% { 
+        transform: translateY(-8px) rotateY(10deg); 
+        opacity: 0.9; 
+    }
+    50% { 
+        transform: translateY(-12px) rotateY(0deg); 
+        opacity: 1; 
+    }
+    75% { 
+        transform: translateY(-8px) rotateY(-10deg); 
+        opacity: 0.9; 
+    }
+}
+
+/* 调整项目网格布局 */
+.game-projects-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card:not(.featured) {
+    background: rgba(30, 58, 138, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:not(.featured):hover {
+    transform: translateY(-8px);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+}
+
+.project-card:not(.featured) .project-image {
+    height: 200px;
+}
+
+.project-card:not(.featured) .project-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .game-projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card:not(.featured) .project-image {
+        height: 180px;
+    }
+}

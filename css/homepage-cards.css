@@ -1,0 +1,336 @@
+/* 重新设计的首页卡片布局样式 */
+
+/* 卡片容器 - 不规则排列 */
+.cards-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* 卡片基本样式 */
+.card {
+    position: absolute;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                box-shadow 0.5s ease,
+                filter 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* 卡片悬停效果 */
+.card:hover {
+    z-index: 10;
+    filter: brightness(1.1);
+}
+
+/* 卡片内容 */
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2), transparent);
+}
+
+.card-content h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card-content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+}
+
+/* 炉石传说风格卡片 - 关于我 */
+.card-about {
+    width: 300px;
+    height: 450px;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    background-image: url('../images/about-bg.jpg');
+    border: 12px solid #D4AF37; /* 金色边框 */
+    animation: float-about 15s ease-in-out infinite;
+    z-index: 3;
+}
+
+.card-about::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    background: url('../images/hearthstone-frame.png') no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.card-about::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: radial-gradient(circle at center, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 昆特牌风格卡片 - 项目经历 */
+.card-projects {
+    width: 280px;
+    height: 420px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../images/projects-bg.jpg');
+    border: 8px solid #3b82f6; /* 蓝色边框 */
+    animation: float-projects 18s ease-in-out infinite;
+    z-index: 2;
+}
+
+.card-projects::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    background: url('../images/gwent-frame.png') no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.card-projects::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 塔罗牌风格卡片 - 创意空间 */
+.card-creative {
+    width: 260px;
+    height: 400px;
+    top: 60%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    background-image: url('../images/creative-bg.jpg');
+    border: 10px solid #228B22; /* 森林绿边框 */
+    animation: float-creative 20s ease-in-out infinite;
+    z-index: 1;
+}
+
+.card-creative::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: url('../images/tarot-frame.png') no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.card-creative::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: radial-gradient(circle at center, rgba(34, 139, 34, 0.3) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 联系卡片 - 固定在右侧 */
+.card-contact {
+    width: 180px;
+    height: 180px;
+    top: 85%;
+    right: 5%;
+    transform: translate(0, -50%);
+    background-image: url('../images/contact-bg.jpg');
+    border: 5px solid var(--primary-color);
+    border-radius: 50%;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-contact .card-content {
+    text-align: center;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+    padding: 1rem;
+}
+
+.card-contact .card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.card-contact .card-content p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+/* 卡片浮动动画 */
+@keyframes float-about {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    25% {
+        transform: translate(-48%, -52%) rotate(2deg);
+    }
+    50% {
+        transform: translate(-50%, -48%) rotate(-1deg);
+    }
+    75% {
+        transform: translate(-52%, -50%) rotate(-3deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+@keyframes float-projects {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    30% {
+        transform: translate(-52%, -48%) rotate(-2deg);
+    }
+    60% {
+        transform: translate(-48%, -52%) rotate(3deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+@keyframes float-creative {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    33% {
+        transform: translate(-48%, -48%) rotate(3deg);
+    }
+    66% {
+        transform: translate(-52%, -52%) rotate(-2deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+/* 页面过渡动画 */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.page-transition.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.page-transition .loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 1200px) {
+    .card-about {
+        left: 30%;
+    }
+    
+    .card-creative {
+        left: 70%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .cards-container {
+        height: auto;
+        flex-direction: column;
+        padding: 4rem 1rem;
+    }
+    
+    .card {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        transform: none;
+        margin-bottom: 2rem;
+        animation: none;
+    }
+    
+    .card-about, .card-projects, .card-creative {
+        width: 280px;
+        height: 400px;
+    }
+    
+    .card-contact {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+}

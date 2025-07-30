@@ -1,0 +1,153 @@
+/* 内容居中样式 */
+
+/* 通用标题居中 */
+.section-title, 
+h2, 
+h3, 
+.section-intro {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 关于我页面内容居中 */
+.about-hero h2,
+.about-hero p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-card {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.about-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.about-profile-image {
+    margin: 0 auto;
+    display: block;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.education-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.interest-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 项目经历页面内容居中 */
+.projects-hero h2,
+.projects-hero p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.featured-project h3 {
+    text-align: center;
+}
+
+.featured-project-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-card-overlay h3 {
+    text-align: center;
+}
+
+.project-card-tags {
+    justify-content: center;
+}
+
+.project-card-back {
+    text-align: center;
+}
+
+/* 创意空间页面内容居中 */
+.creative-hero h2,
+.creative-hero p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.philosophy-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.philosophy-image {
+    margin: 0 auto;
+    display: block;
+}
+
+.showcase-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.creative-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.creative-info {
+    text-align: center;
+}
+
+.process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .about-content,
+    .timeline-item,
+    .education-item,
+    .interest-item,
+    .philosophy-content,
+    .creative-item,
+    .process-step {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

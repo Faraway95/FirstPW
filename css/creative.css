@@ -1,0 +1,454 @@
+/* 创意空间页面特定样式 */
+.creative-hero {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 120px 0 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.creative-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.2) 0%, rgba(30, 58, 138, 0.4) 100%);
+    z-index: 1;
+}
+
+.creative-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.creative-hero h2 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--light-text);
+}
+
+.creative-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 山海经风格装饰元素 */
+.creative-hero-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.decoration-element {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+}
+
+.element-1 {
+    top: 10%;
+    left: 5%;
+    width: 150px;
+    height: 150px;
+    background-image: url('../images/creative1.jpg');
+    animation: float 15s infinite ease-in-out;
+}
+
+.element-2 {
+    top: 20%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    background-image: url('../images/creative2.jpg');
+    animation: float 12s infinite ease-in-out reverse;
+}
+
+.element-3 {
+    bottom: 15%;
+    left: 15%;
+    width: 120px;
+    height: 120px;
+    background-image: url('../images/creative3.jpg');
+    animation: float 18s infinite ease-in-out 2s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+    75% {
+        transform: translateY(15px) rotate(-5deg);
+    }
+}
+
+/* 创意理念部分 */
+.creative-philosophy {
+    padding: var(--spacing-xl) 0;
+    background-color: #fff;
+}
+
+.philosophy-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.philosophy-text {
+    padding: var(--spacing-lg);
+}
+
+.philosophy-text h3 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+}
+
+.philosophy-quote {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-md);
+    border-left: 3px solid var(--accent-color);
+}
+
+.philosophy-description {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+}
+
+.philosophy-image {
+    position: relative;
+    padding: 20px;
+}
+
+.philosophy-img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 2;
+}
+
+.philosophy-image-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 40px;
+    bottom: 40px;
+    border: 6px solid #8b4513; /* 山海经风格边框 */
+    border-radius: var(--border-radius);
+    z-index: 1;
+}
+
+/* 创意展示部分 */
+.creative-showcase {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--background-color);
+}
+
+.creative-showcase h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-color);
+}
+
+.showcase-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.5rem 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    border-bottom: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.tab-btn:hover, .tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--accent-color);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.creative-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.creative-item {
+    background-color: #fff;
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.creative-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--hover-shadow);
+}
+
+.creative-item-inner {
+    position: relative;
+}
+
+.creative-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.creative-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.creative-item:hover .creative-image img {
+    transform: scale(1.1);
+}
+
+.creative-info {
+    padding: var(--spacing-md);
+    border-top: 4px solid var(--accent-color);
+}
+
+.creative-info h4 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.creative-info p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-color);
+}
+
+.btn-view {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-view:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* 创意过程部分 */
+.creative-process {
+    padding: var(--spacing-xl) 0;
+    background-color: #fff;
+}
+
+.creative-process h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xl);
+    color: var(--primary-color);
+}
+
+.process-steps {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.process-step {
+    display: flex;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+}
+
+.process-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 25px;
+    width: 2px;
+    height: calc(100% + var(--spacing-lg) - 50px);
+    background-color: var(--accent-color);
+    z-index: 1;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-right: var(--spacing-md);
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.step-content {
+    background-color: var(--background-color);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    flex: 1;
+}
+
+.step-content h4 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+/* 创意详情模态框 */
+.creative-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.creative-modal-content {
+    background-color: var(--card-background);
+    margin: 5% auto;
+    padding: 0;
+    width: 80%;
+    max-width: 1000px;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--shadow);
+    position: relative;
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: var(--text-color);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.creative-modal-body {
+    padding: var(--spacing-lg);
+}
+
+/* 合作邀请部分 */
+.creative-collaboration {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+}
+
+.collaboration-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.collaboration-content h3 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--light-text);
+}
+
+.collaboration-content p {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* 响应式样式 */
+@media screen and (max-width: 992px) {
+    .philosophy-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .philosophy-image {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .creative-hero h2 {
+        font-size: 2.5rem;
+    }
+    
+    .creative-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .creative-modal-content {
+        width: 95%;
+    }
+    
+    .decoration-element {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .creative-hero h2 {
+        font-size: 2rem;
+    }
+    
+    .philosophy-text {
+        padding: var(--spacing-md);
+    }
+    
+    .creative-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}

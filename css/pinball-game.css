@@ -1,0 +1,407 @@
+/* 三维弹球游戏样式 */
+
+/* 游戏区域布局 */
+.pinball-game-section {
+    margin: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.pinball-game-section h3 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.pinball-game-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+/* 游戏区域 (左侧) */
+.pinball-game-area {
+    background-color: var(--card-background);
+    border-radius: var(--card-border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow);
+    border: 8px solid #4B0082;
+}
+
+#pinball-game-container {
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#pinball-canvas {
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    background: linear-gradient(45deg, #1a1a2e, #16213e);
+    box-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+}
+
+/* 控制按钮区域 */
+.pinball-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.pinball-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.pinball-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.pinball-btn:active {
+    transform: translateY(0);
+}
+
+.pinball-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 挡板控制区域 */
+.flipper-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.flipper-btn {
+    padding: 0.8rem 1.2rem;
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.flipper-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.flipper-btn:active {
+    transform: translateY(0);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.launch-btn {
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #f39c12, #e67e22);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.launch-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--hover-shadow);
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* 游戏说明区域 (右侧) */
+.pinball-instructions {
+    background-color: var(--card-background);
+    border-radius: var(--card-border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow);
+    border: 2px solid var(--border-color);
+    text-align: left;
+}
+
+.pinball-instructions h4 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.instruction-content h5 {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin: 1.5rem 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.instruction-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+}
+
+.instruction-content li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.instruction-content li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 0.8rem;
+}
+
+/* 分数显示区域 */
+.score-display {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    box-shadow: var(--shadow);
+}
+
+.score-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+.score-item:last-child {
+    margin-bottom: 0;
+}
+
+.score-label {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.score-value {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(240, 147, 251, 0.5);
+    min-width: 60px;
+    text-align: right;
+}
+
+/* 游戏内元素动画 */
+.game-target {
+    animation: targetGlow 2s infinite ease-in-out alternate;
+}
+
+@keyframes targetGlow {
+    0% { 
+        box-shadow: 0 0 5px rgba(102, 126, 234, 0.3); 
+        transform: scale(1);
+    }
+    100% { 
+        box-shadow: 0 0 15px rgba(102, 126, 234, 0.8); 
+        transform: scale(1.05);
+    }
+}
+
+.game-ball {
+    animation: ballSpin 1s linear infinite;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+@keyframes ballSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.game-flipper {
+    transition: transform 0.1s ease-out;
+    transform-origin: bottom center;
+}
+
+.game-flipper.active {
+    transform: rotate(-20deg);
+}
+
+/* 特效和粒子系统 */
+.particle-effect {
+    position: absolute;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.score-popup {
+    position: absolute;
+    color: #f39c12;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(243, 156, 18, 0.8);
+    animation: scorePopup 1s ease-out forwards;
+    pointer-events: none;
+    z-index: 200;
+}
+
+@keyframes scorePopup {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .pinball-game-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .pinball-game-area {
+        order: 1;
+    }
+    
+    .pinball-instructions {
+        order: 2;
+    }
+    
+    #pinball-canvas {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .pinball-controls,
+    .flipper-controls {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .pinball-btn,
+    .flipper-btn,
+    .launch-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .pinball-game-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .pinball-game-area,
+    .pinball-instructions {
+        padding: var(--spacing-md);
+    }
+    
+    .instruction-content h5 {
+        font-size: 1rem;
+    }
+    
+    .score-display {
+        padding: var(--spacing-sm);
+    }
+    
+    .score-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.25rem;
+    }
+    
+    .score-value {
+        font-size: 1.5rem;
+    }
+}
+
+/* 游戏状态指示器 */
+.game-status {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+}
+
+.game-status.paused {
+    background: rgba(241, 196, 15, 0.9);
+    color: black;
+}
+
+.game-status.game-over {
+    background: rgba(231, 76, 60, 0.9);
+    color: white;
+    animation: gameOverPulse 1s infinite ease-in-out;
+}
+
+@keyframes gameOverPulse {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.1); }
+}
+
+/* 加载动画 */
+.game-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    color: var(--primary-color);
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(102, 126, 234, 0.3);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

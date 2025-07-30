@@ -1,0 +1,102 @@
+/* 简化抖动特效 */
+
+.glitch-title {
+    position: relative;
+    color: #3b82f6;
+    font-weight: bold;
+    text-shadow: 
+        0 0 5px rgba(59, 130, 246, 0.8),
+        0 0 10px rgba(59, 130, 246, 0.6),
+        0 0 15px rgba(59, 130, 246, 0.4);
+    animation: simple-glitch 3s infinite;
+}
+
+@keyframes simple-glitch {
+    0%, 95% {
+        opacity: 1;
+    }
+    96% {
+        opacity: 0.8;
+    }
+    97% {
+        opacity: 1;
+    }
+    98% {
+        opacity: 0.9;
+    }
+    99% {
+        opacity: 1;
+    }
+}
+
+/* 强调版本的简化抖动特效 */
+.glitch-title-strong {
+    position: relative;
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 1),
+        0 0 20px rgba(255, 255, 255, 0.8),
+        0 0 30px rgba(255, 255, 255, 0.6),
+        0 0 40px rgba(255, 255, 255, 0.4);
+    animation: simple-glitch-strong 4s infinite;
+}
+
+@keyframes simple-glitch-strong {
+    0%, 92% {
+        opacity: 1;
+    }
+    93% {
+        opacity: 0.7;
+    }
+    94% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 0.8;
+    }
+    96% {
+        opacity: 1;
+    }
+    97% {
+        opacity: 0.9;
+    }
+    98% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 悬停增强效果 */
+.glitch-title:hover,
+.glitch-title-strong:hover {
+    animation-duration: 0.1s;
+    text-shadow: 
+        0 0 20px rgba(59, 130, 246, 1),
+        0 0 30px rgba(59, 130, 246, 0.8),
+        0 0 40px rgba(59, 130, 246, 0.6);
+}
+
+/* 响应式优化 */
+@media screen and (max-width: 768px) {
+    .glitch-title,
+    .glitch-title-strong {
+        font-size: 0.9em;
+        letter-spacing: 1px;
+    }
+    
+    .glitch-title::before,
+    .glitch-title::after,
+    .glitch-title-strong::before,
+    .glitch-title-strong::after {
+        opacity: 0.5;
+    }
+} 
