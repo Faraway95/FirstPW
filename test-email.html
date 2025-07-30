@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .form-group { margin: 10px 0; }
+        input, select, textarea { width: 300px; padding: 8px; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Email Form Test</h2>
+    <form id="testForm">
+        <div class="form-group">
+            <label>Name:</label><br>
+            <input type="text" name="name" value="Test User" required>
+        </div>
+        <div class="form-group">
+            <label>Email:</label><br>
+            <input type="email" name="email" value="test@example.com" required>
+        </div>
+        <div class="form-group">
+            <label>Subject:</label><br>
+            <select name="subject" required>
+                <option value="job">工作机会</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Message:</label><br>
+            <textarea name="message" required>这是一个测试消息，测试邮件发送功能是否正常工作。</textarea>
+        </div>
+        <button type="submit">Send Test Email</button>
+    </form>
+
+    <script>
+        document.getElementById('testForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: this.name.value,
+                email: this.email.value,
+                subject: this.subject.value,
+                message: this.message.value
+            };
+            
+            console.log('Sending test email:', formData);
+            
+            const emailData = new FormData();
+            emailData.append('access_key', '99cd281d-c287-4149-9805-387e2f813713');
+            emailData.append('name', formData.name);
+            emailData.append('email', formData.email);
+            emailData.append('subject', `[网站联系测试] ${formData.subject}`);
+            emailData.append('message', formData.message);
+            emailData.append('to', 'jordantu95@gmail.com');
+            
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: emailData
+                });
+                
+                const result = await response.json();
+                console.log('Response:', result);
+                
+                if (result.success) {
+                    alert('测试邮件发送成功！');
+                } else {
+                    alert('发送失败: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('发送出错: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

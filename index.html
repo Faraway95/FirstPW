@@ -3,163 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>远在咫尺的个人空间</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>远在咫尺 - 游戏开发者的数字空间</title>
+    <!-- 引入主样式表 -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- 引入导航样式表 -->
+    <link rel="stylesheet" href="css/navigation.css">
+    <!-- 引入动画样式表 -->
+    <link rel="stylesheet" href="css/animations.css">
+    <!-- 引入首页样式 -->
+    <link rel="stylesheet" href="css/homepage.css">
+    <!-- 引入AOS动画库样式 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- 引入Google Fonts中文字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="main-nav">
-        <div class="nav-container">
+    <!-- 页面头部导航 -->
+    <header class="header-transparent">
+        <div class="container">
             <div class="logo">
-                <span>GameDesign</span>
+                <h1>远在咫尺</h1>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">首页</a></li>
-                <li><a href="#projects">项目</a></li>
-                <li><a href="#about">关于</a></li>
-                <li><a href="#contact">联系</a></li>
-            </ul>
-            <div class="nav-social">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
+            <!-- 移动端导航切换按钮 -->
+            <button class="mobile-nav-toggle" aria-label="切换导航">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- 主导航菜单 -->
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="resume.html">关于我</a></li>
+                    <li><a href="projects.html">项目经历</a></li>
+                    <li><a href="contact.html">联系我</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- 动态背景元素 -->
-    <div class="bg-elements">
-        <div class="bg-circle circle-1"></div>
-        <div class="bg-circle circle-2"></div>
-        <div class="bg-circle circle-3"></div>
-        <div class="bg-square square-1"></div>
-        <div class="bg-square square-2"></div>
-        <div class="bg-triangle triangle-1"></div>
-    </div>
-
-    <!-- 主内容区 -->
-    <main class="content-wrapper">
-        <!-- 首页 -->
-        <section id="home" class="page-section active">
-            <div class="hero-grid">
-                <!-- 主标题卡片 -->
-                <div class="hero-card main-title">
-                    <h1>远在咫尺的创作空间</h1>
-                    <p class="subtitle">8年游戏行业经验 | 独立游戏开发者</p>
-                </div>
-
-                <!-- 关于卡片 -->
-                <div class="hero-card about-card">
-                    <div class="card-icon">
-                        <i class="fas fa-user"></i>
+    <main>
+        <!-- 首屏 Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-background">
+                <div class="gradient-overlay"></div>
+                <!-- 太阳系动画 -->
+                <div class="solar-system">
+                    <div class="sun" data-planet="sun">
+                        <div class="sun-glow"></div>
                     </div>
-                    <h3>关于我</h3>
-                    <p>15年+主机游戏、竞技游戏经验，资深游戏玩家。</p>
-                </div>
-
-                <!-- 项目卡片 -->
-                <div class="hero-card projects-card">
-                    <div class="card-icon">
-                        <i class="fas fa-gamepad"></i>
+                    <div class="orbit orbit-mercury">
+                        <div class="planet mercury" data-planet="mercury"></div>
                     </div>
-                    <h3>我的项目</h3>
-                    <p>正在开发一款独立网页游戏</p>
-                </div>
-
-                <!-- 技能卡片 -->
-                <div class="hero-card skills-card">
-                    <div class="card-icon">
-                        <i class="fas fa-code"></i>
+                    <div class="orbit orbit-venus">
+                        <div class="planet venus" data-planet="venus"></div>
                     </div>
-                    <h3>技能</h3>
-                    <p>数据分析，产品运营，Unity, Python, 游戏设计, 关卡/玩法设计</p>
-                </div>
-
-                <!-- 大图卡片 -->
-                <div class="hero-card image-card">
-                    <img src="assets/placeholder-hero.png" alt="游戏设计作品">
+                    <div class="orbit orbit-earth">
+                        <div class="planet earth" data-planet="earth">
+                            <div class="moon"></div>
+                        </div>
+                    </div>
+                    <div class="orbit orbit-mars">
+                        <div class="planet mars" data-planet="mars"></div>
+                    </div>
+                    <div class="orbit orbit-jupiter">
+                        <div class="planet jupiter" data-planet="jupiter"></div>
+                    </div>
+                    <div class="orbit orbit-saturn">
+                        <div class="planet saturn" data-planet="saturn">
+                            <div class="saturn-ring"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <!-- 项目部分 -->
-        <section id="projects" class="page-section">
-            <div class="section-header">
-                <h2>游戏项目</h2>
-                <p>探索我的游戏设计作品</p>
-            </div>
-            <div class="project-grid">
-                <!-- 项目卡片1 -->
-                <div class="project-card" data-project="project1">
-                    <div class="project-image">
-                        <img src="assets/placeholder-project1.png" alt="项目1">
-                    </div>
-                    <div class="project-info">
-                        <h3>三国肉鸽对战游戏</h3>
-                        <p>一款PVE的2D类宝可梦对战游戏</p>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line" data-aos="fade-up" data-aos-delay="200">你好，我是</span>
+                        <span class="title-name" data-aos="fade-up" data-aos-delay="400">远在咫尺</span>
+                        <span class="title-role" data-aos="fade-up" data-aos-delay="600">正在成为独立游戏开发者</span>
+                    </h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="800">
+                        游戏行业8年从业者，热爱创造有意义的数字体验<br>
+                        用代码编织梦想，让创意照进现实
+                    </p>
+                    <div class="hero-cta" data-aos="fade-up" data-aos-delay="1000">
+                        <a href="projects.html" class="btn btn-primary">
+                            <span>查看项目</span>
+                            <i class="fas fa-rocket"></i>
+                        </a>
+                        <a href="resume.html" class="btn btn-outline">
+                            <span>了解更多</span>
+                            <i class="fas fa-user"></i>
+                        </a>
                     </div>
                 </div>
-                
-                <!-- 项目卡片2 -->
-                <div class="project-card" data-project="project2">
-                    <div class="project-image">
-                        <img src="assets/placeholder-project2.png" alt="项目2">
-                    </div>
-                    <div class="project-info">
-                        <h3>网页文字小游戏</h3>
-                        <p>轻松有趣的休闲益智游戏</p>
+            </div>
+            
+            <!-- 行星信息弹窗 -->
+            <div class="planet-tooltip" id="planet-tooltip">
+                <div class="tooltip-content">
+                    <h3 class="planet-name"></h3>
+                    <div class="planet-info">
+                        <p class="planet-description"></p>
+                        <div class="planet-details">
+                            <span class="planet-distance"></span>
+                            <span class="planet-diameter"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- 项目详情层 -->
-        <div class="project-detail-layer">
-            <!-- 项目1详情 -->
-            <div class="project-detail" data-project-detail="project1">
-                <button class="close-detail"><i class="fas fa-times"></i></button>
-                <div class="detail-content">
-                    <div class="detail-images">
-                        <img src="assets/placeholder-detail1-1.png" alt="项目1截图1">
-                        <img src="assets/placeholder-detail1-2.png" alt="项目1截图2">
-                    </div>
-                    <div class="detail-text">
-                        <h3>冒险解谜游戏</h3>
-                        <div class="detail-meta">
-                            <span><i class="far fa-calendar-alt"></i> 2023年发布</span>
-                            <span><i class="fas fa-tags"></i> Unity, C#, 2D</span>
-                        </div>
-                        <p>这是一款充满谜题和探索元素的2D冒险游戏，玩家需要解开各种环境谜题来推进故事。</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 项目2详情 -->
-            <div class="project-detail" data-project-detail="project2">
-                <button class="close-detail"><i class="fas fa-times"></i></button>
-                <div class="detail-content">
-                    <div class="detail-images">
-                        <img src="assets/placeholder-detail2-1.png" alt="项目2截图1">
-                        <img src="assets/placeholder-detail2-2.png" alt="项目2截图2">
-                    </div>
-                    <div class="detail-text">
-                        <h3>休闲手游</h3>
-                        <div class="detail-meta">
-                            <span><i class="far fa-calendar-alt"></i> 2024年发布</span>
-                            <span><i class="fas fa-tags"></i> Unreal, Blueprint, Mobile</span>
-                        </div>
-                        <p>一款轻松有趣的休闲益智游戏，专为移动设备设计，包含多种游戏模式和关卡。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 其他部分... -->
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>远在咫尺</h3>
+                    <p>正在成为独立游戏开发者的路上</p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <a href="resume.html">关于我</a>
+                        <a href="projects.html">项目经历</a>
+                        <a href="contact.html">联系我</a>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="contact.html" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> 远在咫尺. 用心创造，用爱分享。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS 动画库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.js"></script>
+    <!-- JavaScript文件 -->
+    <script src="js/script.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/homepage.js"></script>
 </body>
 </html>

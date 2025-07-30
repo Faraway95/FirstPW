@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我 - 远在咫尺</title>
+    <!-- 引入主样式表 -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- 引入首页样式（包含导航栏样式） -->
+    <link rel="stylesheet" href="css/homepage.css">
+    <!-- 引入导航样式表 -->
+    <link rel="stylesheet" href="css/navigation.css">
+    <!-- 引入简历样式表（用于resume-hero） -->
+    <link rel="stylesheet" href="css/resume.css">
+    <!-- 引入联系页面专用样式表 -->
+    <link rel="stylesheet" href="css/contact.css">
+    <!-- 引入动画样式表 -->
+    <link rel="stylesheet" href="css/animations.css">
+    <!-- 引入内容居中样式表 -->
+    <link rel="stylesheet" href="css/center-content.css">
+    <!-- 引入卡顿特效样式 -->
+    <link rel="stylesheet" href="css/glitch-effects.css">
+    <!-- 引入天气背景样式 -->
+    <link rel="stylesheet" href="css/weather-background.css">
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- 引入Google Fonts中文字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 天气背景容器 -->
+    <div id="weather-background"></div>
+    
+    <!-- 页面头部导航 -->
+    <header class="header-transparent">
+        <div class="container">
+            <div class="logo">
+                <h1>远在咫尺</h1>
+            </div>
+            <!-- 移动端导航切换按钮 -->
+            <button class="mobile-nav-toggle" aria-label="切换导航">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- 主导航菜单 -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="resume.html">关于我</a></li>
+                    <li><a href="projects.html">项目经历</a></li>
+                    <li><a href="contact.html" class="active">联系我</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 联系页面主体内容 -->
+        <section class="resume-hero">
+            <div class="container">
+                <h2 class="glitch-title-strong" data-text="联系我">联系我</h2>
+                <p>让我们开始一场有意义的对话</p>
+                <div class="resume-actions">
+                    <button class="btn btn-secondary" onclick="document.getElementById('contactForm').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-envelope"></i> 立即联系
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式卡片 -->
+        <section class="contact-cards-section">
+            <div class="container">
+                <div class="contact-cards-grid">
+                    <!-- 邮箱联系卡片 -->
+                    <div class="contact-card email-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-content">
+                            <h3>电子邮箱</h3>
+                            <p class="contact-description">发送邮件是最直接的联系方式</p>
+                            <div class="contact-detail">
+                                <a href="mailto:jordantu95@163.com">jordantu95@163.com</a>
+                            </div>
+                            <div class="contact-action">
+                                <a href="mailto:jordantu95@163.com" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane"></i> 发送邮件
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 微信联系卡片 -->
+                    <div class="contact-card wechat-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-weixin"></i>
+                        </div>
+                        <div class="contact-content">
+                            <h3>微信</h3>
+                            <p class="contact-description">扫码添加微信，即时沟通</p>
+                            <div class="contact-detail">
+                                <div class="qr-code-container">
+                                    <img src="images/QR code.jpg" alt="微信二维码" class="qr-code-image">
+                                </div>
+                            </div>
+                            <div class="contact-action">
+                                <button class="btn btn-secondary" onclick="showWeChatQR()">
+                                    <i class="fas fa-qrcode"></i> 查看二维码
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 电话联系卡片 -->
+                    <div class="contact-card phone-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-content">
+                            <h3>电话</h3>
+                            <p class="contact-description">工作时间内可直接电话联系</p>
+                            <div class="contact-detail">
+                                <a href="tel:+8615906635356">+86 159-0663-5356</a>
+                            </div>
+                            <div class="contact-action">
+                                <a href="tel:+8615906635356" class="btn btn-primary">
+                                    <i class="fas fa-phone"></i> 立即拨打
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系表单区域 -->
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="form-wrapper">
+                    <div class="form-header">
+                        <h3>发送消息</h3>
+                        <p>有任何问题或合作意向，欢迎通过下方表单联系我</p>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm" name="contact">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">
+                                    <i class="fas fa-user"></i> 姓名
+                                </label>
+                                <input type="text" id="name" name="name" required placeholder="请输入您的姓名">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class="fas fa-envelope"></i> 邮箱
+                                </label>
+                                <input type="email" id="email" name="email" required placeholder="请输入您的邮箱">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">
+                                <i class="fas fa-tag"></i> 主题
+                            </label>
+                            <select id="subject" name="subject" required>
+                                <option value="">请选择联系主题</option>
+                                <option value="job">工作机会</option>
+                                <option value="collaboration">项目合作</option>
+                                <option value="consultation">咨询服务</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-comment"></i> 消息内容
+                            </label>
+                            <textarea id="message" name="message" rows="6" required placeholder="请详细描述您的需求或问题..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i> 发送消息
+                            </button>
+                            <button type="reset" class="btn btn-secondary">
+                                <i class="fas fa-undo"></i> 重置
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 位置信息区域 -->
+        <section class="location-section">
+            <div class="container">
+                <div class="location-info">
+                    <div class="location-header">
+                        <h3><i class="fas fa-map-marker-alt"></i> 我的位置</h3>
+                        <p>目前工作和生活在上海</p>
+                    </div>
+                    <div class="location-details">
+                        <div class="location-item">
+                            <i class="fas fa-building"></i>
+                            <span>上海市</span>
+                        </div>
+                        <div class="location-item">
+                            <i class="fas fa-clock"></i>
+                            <span>GMT+8 中国标准时间</span>
+                        </div>
+                        <div class="location-item">
+                            <i class="fas fa-language"></i>
+                            <span>中文 / English</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> 远在咫尺. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript文件 -->
+    <script src="js/script.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/homepage.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script src="js/weather.js"></script>
+</body>
+</html> 

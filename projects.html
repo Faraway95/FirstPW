@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目经历 - 远在咫尺</title>
+    <!-- 引入主样式表 -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- 引入首页样式（包含导航栏样式） -->
+    <link rel="stylesheet" href="css/homepage.css">
+    <!-- 引入简历样式表（用于resume-hero） -->
+    <link rel="stylesheet" href="css/resume.css">
+    <!-- 引入项目页面特定样式 -->
+    <link rel="stylesheet" href="css/projects.css">
+    <!-- 引入导航样式表 -->
+    <link rel="stylesheet" href="css/navigation.css">
+    <!-- 引入动画样式表 -->
+    <link rel="stylesheet" href="css/animations.css">
+    <!-- 引入内容居中样式表 -->
+    <link rel="stylesheet" href="css/center-content.css">
+    <!-- 引入贪吃蛇游戏样式表 -->
+    <link rel="stylesheet" href="css/snake-game.css">
+    <!-- 引入卡顿特效样式 -->
+    <link rel="stylesheet" href="css/glitch-effects.css">
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- 引入Google Fonts中文字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 页面头部导航 -->
+    <header class="header-transparent">
+        <div class="container">
+            <div class="logo">
+                <h1>远在咫尺</h1>
+            </div>
+            <!-- 移动端导航切换按钮 -->
+            <button class="mobile-nav-toggle" aria-label="切换导航">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- 主导航菜单 -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="resume.html">关于我</a></li>
+                    <li><a href="projects.html" class="active">项目经历</a></li>
+                    <li><a href="contact.html">联系我</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 项目页面主体内容 -->
+        <section class="resume-hero">
+            <div class="container">
+                <h2 class="glitch-title-strong" data-text="项目经历">项目经历</h2>
+                <p>探索我设计过的游戏、内容与工作项目</p>
+                <div class="resume-actions">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-gamepad"></i> 体验游戏
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 贪吃蛇游戏部分 -->
+        <section class="snake-game-section">
+            <div class="container">
+                <h3>🐍 贪吃蛇小游戏</h3>
+                <div id="snake-game-container">
+                    <!-- 游戏画布和控制区域将由JavaScript动态生成 -->
+                </div>
+                
+                <!-- 触摸控制区域 (移动端) -->
+                <div class="touch-controls">
+                    <div class="touch-control-btn control-up" data-direction="up">↑</div>
+                    <div class="touch-control-btn control-left" data-direction="left">←</div>
+                    <div class="touch-control-btn control-right" data-direction="right">→</div>
+                    <div class="touch-control-btn control-down" data-direction="down">↓</div>
+                </div>
+                
+                <div class="game-instructions">
+                    <h4>🎮 游戏说明</h4>
+                    <ul>
+                        <li>使用键盘方向键或触摸屏幕上的方向按钮控制蛇的移动</li>
+                        <li>吃到红色食物可以增加分数和蛇的长度</li>
+                        <li>撞到墙壁或自己的身体会导致游戏结束</li>
+                        <li>按空格键可以暂停/继续游戏</li>
+                        <li>尝试获得最高分并登上排行榜！</li>
+                        <li>游戏速度会随着分数增加而加快</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 游戏项目部分 -->
+        <section class="game-projects-section">
+            <div class="container">
+                <h3>🎮 游戏项目</h3>
+                <div class="game-projects-grid">
+                    <!-- 主推项目：三色星光 -->
+                    <div class="project-card featured">
+                        <div class="project-image">
+                            <img src="images/project1.jpg" alt="三色星光" class="project-img">
+                            <div class="project-overlay">
+                                <div class="project-tag">在研项目</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>三色星光</h4>
+                            <p class="project-description">​「用西装内衬拆解的星光手术刀
+                                修复的不只是流浪猫的肿瘤——
+                                当52Hz泪水在铝箔共鸣腔震荡
+                                人类的创痛也开始量子坍塌」​</p>
+                            <div class="project-meta">
+                                <span class="meta-item"><i class="fas fa-calendar"></i> 2025-至今</span>
+                                <span class="meta-item"><i class="fas fa-code"></i> 剧情/视觉小说/模拟经营</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 新项目：上班打牌！ -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="card-game-preview">
+                                <div class="card-demo">
+                                    <div class="demo-card spade"></div>
+                                    <div class="demo-card heart"></div>
+                                    <div class="demo-card club"></div>
+                                    <div class="demo-card diamond"></div>
+                                </div>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-tag">在研项目</div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>上班打牌！</h4>
+                            <p class="project-description">一款轻松休闲的卡牌游戏，专为工作间隙设计。简单易上手的玩法，让你在繁忙的工作中找到片刻的放松和乐趣。</p>
+                            <div class="project-meta">
+                                <span class="meta-item"><i class="fas fa-calendar"></i> 2025-至今</span>
+                                <span class="meta-item"><i class="fas fa-code"></i> 休闲卡牌/roguelike</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> 远在咫尺. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript文件 -->
+    <script src="js/script.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/homepage.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/image-placeholders.js"></script>
+    <script src="js/snake-game.js"></script>
+</body>
+</html>

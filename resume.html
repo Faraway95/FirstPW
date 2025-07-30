@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历 - 远在咫尺</title>
+    <!-- 引入主样式表 -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- 引入首页样式（包含导航栏样式） -->
+    <link rel="stylesheet" href="css/homepage.css">
+    <!-- 引入简历页面特定样式 -->
+    <link rel="stylesheet" href="css/resume.css">
+    <!-- 引入导航样式表 -->
+    <link rel="stylesheet" href="css/navigation.css">
+    <!-- 引入动画样式表 -->
+    <link rel="stylesheet" href="css/animations.css">
+    <!-- 引入内容居中样式表 -->
+    <link rel="stylesheet" href="css/center-content.css">
+    <!-- 引入卡顿特效样式 -->
+    <link rel="stylesheet" href="css/glitch-effects.css">
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- 引入Google Fonts中文字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 页面头部导航 -->
+    <header class="header-transparent">
+        <div class="container">
+            <div class="logo">
+                <h1>远在咫尺</h1>
+            </div>
+            <!-- 移动端导航切换按钮 -->
+            <button class="mobile-nav-toggle" aria-label="切换导航">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- 主导航菜单 -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="resume.html" class="active">关于我</a></li>
+                    <li><a href="projects.html">项目经历</a></li>
+                    <li><a href="contact.html">联系我</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 简历页面主体内容 -->
+        <section class="resume-hero">
+            <div class="container">
+                <h2 class="glitch-title-strong" data-text="个人简历">个人简历</h2>
+                <p>完整的职业履历与专业技能展示</p>
+                <div class="resume-actions">
+                    <button id="download-pdf" class="btn">
+                        <i class="fas fa-download"></i> 下载PDF版本
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 个人信息部分 -->
+        <section class="resume-section personal-info">
+            <div class="container">
+                <div class="resume-card">
+                    <div class="resume-header">
+                        <div class="profile-image-container">
+                            <img src="images/profile.jpg" alt="个人照片" class="profile-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDE1MCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxNTAiIGZpbGw9IiNmMGY3ZmYiLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjYwIiByPSIyNSIgZmlsbD0iIzNiODJmNiIvPjxwYXRoIGQ9Ik00MCA5MEM0MCA4NSA0NSA4MCA3NSA4MFMxMTAgODUgMTEwIDkwVjEzMEg0MFY5MFoiIGZpbGw9IiMzYjgyZjYiLz48L3N2Zz4='">
+                        </div>
+                        <div class="personal-details">
+                            <h3>涂润东</h3>
+                            <p class="job-title">游戏发行经理</p>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>jordantu95@163.com</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+86 159-0663-5356</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>上海市</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <span>1995.10.09</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 个人简介 -->
+        <section class="resume-section summary">
+            <div class="container">
+                                  <div class="resume-card">
+                     <h3><i class="fas fa-user"></i> 个人简介</h3>
+                     <p>拥有8年+游戏行业经验的高级运营与发行专家，先后就职于网易游戏和EA艺电，专注于游戏运营、产品发行和用户增长。目前担任艺电（上海）游戏发行经理，负责非FC手游发行业务，在岗期间负责多款在线产品共计产生超过90M美元净收入。曾在网易担任《第五人格》运营主管，成功将社区日活提升122%。具备成熟的项目管理能力和丰富的跨部门、跨文化交流合作经验。</p>
+                  </div>
+            </div>
+        </section>
+
+        <!-- 工作经验 -->
+        <section class="resume-section experience">
+            <div class="container">
+                <div class="resume-card">
+                    <h3><i class="fas fa-briefcase"></i> 工作经验</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2022.06 - 至今</div>
+                            <div class="timeline-content">
+                                <h4>游戏发行经理</h4>
+                                <p class="company">艺电（上海）计算机软件有限公司 (EA) | 上海</p>
+                                <ul class="responsibilities">
+                                    <li>总体负责非FC手游的发行业务，对收入负责，在岗期间负责多款在线产品共计产生超过90M美元净收入</li>
+                                    <li>负责《极品飞车：集结》国服&港澳台从0到1的上线过程，协助完成合同条款制定</li>
+                                    <li>负责《红警OL》《植物大战僵尸2》等多款产品的长线发行工作</li>
+                                    <li>发起小游戏、车机合作、IP联动等多项长线增长计划，累计带来百万级新增用户</li>
+                                    <li>关注国内外市场情况，发掘新产品/新项目/新合作机会，筹备多个未上线新产品</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">2017.07 - 2022.05</div>
+                            <div class="timeline-content">
+                                <h4>游戏运营主管</h4>
+                                <p class="company">网易（杭州）网络有限公司 | 杭州</p>
+                                <ul class="responsibilities">
+                                    <li>负责《第五人格》手游产品运营工作，全面负责社区、活动、内容、直播、赛事、风控、客服等模块</li>
+                                    <li>负责网易大神第五人格圈子社区运营，一年内圈子日活同比提升122%，游戏渗透率翻倍</li>
+                                    <li>协助搭建第五人格职业联赛联盟体系，牵头运营赛事青训生态</li>
+                                    <li>搭建"第五电竞学院"，以定期开营、线上选秀、线下考核等形式为职业联赛输送20+名职业选手</li>
+                                    <li>推进全产品通用版本用户运营策略模板，半年帮助产品达成百万级新增回流</li>
+                                    <li>作为部门内校招、社招初面试官，累计协助团队筛选人才百人次</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 教育背景 -->
+        <section class="resume-section education">
+            <div class="container">
+                <div class="resume-card">
+                    <h3><i class="fas fa-graduation-cap"></i> 教育背景</h3>
+                    <div class="education-grid">
+                        <div class="education-item">
+                            <div class="education-content">
+                                <h4>学士学位 - 英语（国际贸易）</h4>
+                                <p class="school">合肥工业大学 | 合肥</p>
+                                <p class="education-date">2013.09 - 2017.06</p>
+                                <p class="description">曾任班长、学生会主席、辩论队长等职务，顺利获得专业四级、专业八级证书</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 专业技能 -->
+        <section class="resume-section skills">
+            <div class="container">
+                <div class="resume-card">
+                    <h3><i class="fas fa-cogs"></i> 专业技能</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>运营技能</h4>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <span class="skill-name">游戏运营策略</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">用户增长</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">数据分析</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>策划技能</h4>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <span class="skill-name">内容策划</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">活动设计</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">用户体验设计</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>工具软件</h4>
+                            <div class="tool-tags">
+                                <span class="tool-tag">Excel / Google Sheets</span>
+                                <span class="tool-tag">SQL</span>
+                                <span class="tool-tag">Tableau</span>
+                                <span class="tool-tag">Unity</span>
+                                <span class="tool-tag">Figma</span>
+                                <span class="tool-tag">Photoshop</span>
+                                <span class="tool-tag">Axure RP</span>
+                                <span class="tool-tag">Jira</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目经历 -->
+        <section class="resume-section projects">
+            <div class="container">
+                <div class="resume-card">
+                    <h3><i class="fas fa-rocket"></i> 核心项目</h3>
+                    <div class="projects-list">
+                        <div class="project-item">
+                            <h4>《一梦江湖》(原楚留香)信誉积分体系搭建</h4>
+                            <p class="project-meta">2018.07 - 2019.03 | 项目负责人</p>
+                            <p class="project-description">针对游戏初期"基金号"泛滥问题，主导设计并落地网易首个产品信誉积分体系"江湖信誉"。通过加权算法，以活跃、付费为加分项，违规行为为减分项，有效控制风险，并应用于游戏内多个玩法，实现低成本高效率的风险抵御。</p>
+                        </div>
+                        
+                        <div class="project-item">
+                            <h4>《一梦江湖》新服运营体系搭建</h4>
+                            <p class="project-meta">2019.11 - 2020.08 | 项目负责人</p>
+                            <p class="project-description">为应对游戏稳定期新增乏力，围绕新服搭建运营体系。核心玩法为外部提前组队预约，整合社区、直播、KOL等资源引流，设计个性化单服玩法促进留存。</p>
+                            <ul class="project-achievements">
+                                <li>累计完成3期重点新服运营</li>
+                                <li>引流纯新增用户超10万</li>
+                                <li>成功将方法论复用于其他同类产品</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-item">
+                            <h4>《第五人格》社区引流及运营</h4>
+                            <p class="project-meta">2020.11 - 2021.11 | 项目负责人</p>
+                            <p class="project-description">负责网易大神第五人格圈子社区运营。通过搭建个人图鉴、战绩工具等内容型工具提升用户依赖；建立标准化活动生产管线，围绕节点策划品牌活动引流。</p>
+                            <ul class="project-achievements">
+                                <li>一年内实现圈子日活同比增长122%</li>
+                                <li>游戏在社区的渗透率翻倍</li>
+                                <li>建立了标准化活动生产管线</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> 远在咫尺. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript文件 -->
+    <script src="js/script.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/homepage.js"></script>
+    <script src="js/resume.js"></script>
+</body>
+</html> 
